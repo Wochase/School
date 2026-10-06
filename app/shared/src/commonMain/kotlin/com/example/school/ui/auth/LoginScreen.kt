@@ -25,7 +25,7 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun LoginScreen(
     viewModel: AuthViewModel,
-    onLoginSuccess: (userRole: String, studentId: String?) -> Unit
+    onLoginSuccess: (userRole: String, studentId: String?) -> Unit,
 ) {
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -44,7 +44,7 @@ fun LoginScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFE1E1E1)),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         // Scrollable container to handle smaller screens or window resizing safely
         val scrollState = rememberScrollState()
@@ -57,25 +57,25 @@ fun LoginScreen(
                 .background(Color.White)
                 .verticalScroll(scrollState)
                 .padding(horizontal = 40.dp, vertical = 32.dp),
-            contentAlignment = Alignment.TopCenter
+            contentAlignment = Alignment.TopCenter,
         ) {
             Column(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.Start
+                horizontalAlignment = Alignment.Start,
             ) {
                 // 1. School Logo Header
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 12.dp, bottom = 24.dp),
-                    contentAlignment = Alignment.Center
+                    contentAlignment = Alignment.Center,
                 ) {
                     Image(
                         painter = painterResource(Res.drawable.schoollogo),
                         contentDescription = "School Logo",
                         modifier = Modifier
                             .fillMaxWidth(0.7f)
-                            .height(140.dp)
+                            .height(140.dp),
                     )
                 }
 
@@ -85,7 +85,7 @@ fun LoginScreen(
                     color = Color.Black,
                     fontSize = 40.sp,
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 20.dp)
+                    modifier = Modifier.padding(bottom = 20.dp),
                 )
 
                 // 3. Email / Student ID Field
@@ -94,7 +94,7 @@ fun LoginScreen(
                     color = Color.Black,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium,
-                    modifier = Modifier.padding(bottom = 6.dp)
+                    modifier = Modifier.padding(bottom = 6.dp),
                 )
 
                 OutlinedTextField(
@@ -106,11 +106,11 @@ fun LoginScreen(
                         focusedBorderColor = Color.Black,
                         unfocusedBorderColor = Color.Black,
                         focusedContainerColor = Color.White,
-                        unfocusedContainerColor = Color.White
+                        unfocusedContainerColor = Color.White,
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(56.dp)
+                        .height(56.dp),
                 )
 
                 Spacer(modifier = Modifier.height(20.dp))
@@ -121,7 +121,7 @@ fun LoginScreen(
                     color = Color.Black,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium,
-                    modifier = Modifier.padding(bottom = 6.dp)
+                    modifier = Modifier.padding(bottom = 6.dp),
                 )
 
                 OutlinedTextField(
@@ -134,11 +134,11 @@ fun LoginScreen(
                         focusedBorderColor = Color.Black,
                         unfocusedBorderColor = Color.Black,
                         focusedContainerColor = Color.White,
-                        unfocusedContainerColor = Color.White
+                        unfocusedContainerColor = Color.White,
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(56.dp)
+                        .height(56.dp),
                 )
 
                 if (authState is AuthUiState.Error) {
@@ -146,7 +146,7 @@ fun LoginScreen(
                     Text(
                         text = (authState as AuthUiState.Error).message,
                         color = MaterialTheme.colorScheme.error,
-                        fontSize = 14.sp
+                        fontSize = 14.sp,
                     )
                 }
 
@@ -160,16 +160,19 @@ fun LoginScreen(
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF009DFF)),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(56.dp)
+                        .height(56.dp),
                 ) {
                     if (authState is AuthUiState.Authenticating) {
-                        CircularProgressIndicator(color = Color.White, modifier = Modifier.size(24.dp))
+                        CircularProgressIndicator(
+                            color = Color.White,
+                            modifier = Modifier.size(24.dp),
+                        )
                     } else {
                         Text(
                             text = "Login",
                             color = Color.White,
                             fontSize = 22.sp,
-                            fontWeight = FontWeight.Bold
+                            fontWeight = FontWeight.Bold,
                         )
                     }
                 }
@@ -183,7 +186,7 @@ fun LoginScreen(
                     fontSize = 14.sp,
                     fontWeight = FontWeight.SemiBold,
                     lineHeight = 18.sp,
-                    modifier = Modifier.padding(bottom = 12.dp)
+                    modifier = Modifier.padding(bottom = 12.dp),
                 )
 
                 Text(
@@ -191,7 +194,7 @@ fun LoginScreen(
                     color = Color.DarkGray,
                     fontSize = 13.sp,
                     lineHeight = 17.sp,
-                    modifier = Modifier.padding(bottom = 20.dp)
+                    modifier = Modifier.padding(bottom = 20.dp),
                 )
 
                 // 7. Administrative Queries Footer
@@ -204,7 +207,7 @@ fun LoginScreen(
                             append("admin@brainybairn.edu.gh")
                         }
                     },
-                    modifier = Modifier.padding(bottom = 16.dp)
+                    modifier = Modifier.padding(bottom = 16.dp),
                 )
             }
         }
