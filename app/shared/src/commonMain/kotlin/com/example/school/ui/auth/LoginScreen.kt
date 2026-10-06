@@ -3,7 +3,9 @@ package com.example.e_voting.ui.auth
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -16,8 +18,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import evoting.app.shared.generated.resources.Res
-import evoting.app.shared.generated.resources.schoollogo
+import e_voting.app.shared.generated.resources.Res
+import e_voting.app.shared.generated.resources.schoollogo
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
@@ -37,23 +39,28 @@ fun LoginScreen(
         }
     }
 
-    // Outer Gray Canvas (Responsive Desktop/Tablet Background)
+    // Outer background fills the entire available window/screen
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFE1E1E1)),
         contentAlignment = Alignment.Center
     ) {
-        // Centered White Panel
+        // Scrollable container to handle smaller screens or window resizing safely
+        val scrollState = rememberScrollState()
+
         Box(
             modifier = Modifier
-                .width(577.dp)
+                .widthIn(max = 577.dp) // Caps maximum width to match your design
+                .fillMaxWidth()
                 .fillMaxHeight()
                 .background(Color.White)
-                .padding(horizontal = 40.dp, vertical = 32.dp)
+                .verticalScroll(scrollState)
+                .padding(horizontal = 40.dp, vertical = 32.dp),
+            contentAlignment = Alignment.TopCenter
         ) {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.Start
             ) {
                 // 1. School Logo Header
@@ -67,8 +74,8 @@ fun LoginScreen(
                         painter = painterResource(Res.drawable.schoollogo),
                         contentDescription = "School Logo",
                         modifier = Modifier
-                            .width(360.dp)
-                            .height(160.dp)
+                            .fillMaxWidth(0.7f)
+                            .height(140.dp)
                     )
                 }
 
@@ -76,14 +83,14 @@ fun LoginScreen(
                 Text(
                     text = "Login",
                     color = Color.Black,
-                    fontSize = 44.sp,
+                    fontSize = 40.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(bottom = 20.dp)
                 )
 
-                // 3. Email Input Field
+                // 3. Email / Student ID Field
                 Text(
-                    text = "Email / Student ID",
+                    text = "Email",
                     color = Color.Black,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium,
@@ -103,12 +110,12 @@ fun LoginScreen(
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(58.dp)
+                        .height(56.dp)
                 )
 
                 Spacer(modifier = Modifier.height(20.dp))
 
-                // 4. Password Input Field
+                // 4. Password Field
                 Text(
                     text = "Password",
                     color = Color.Black,
@@ -131,10 +138,9 @@ fun LoginScreen(
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(58.dp)
+                        .height(56.dp)
                 )
 
-                // Auth Error Banner
                 if (authState is AuthUiState.Error) {
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
@@ -170,7 +176,7 @@ fun LoginScreen(
 
                 Spacer(modifier = Modifier.height(32.dp))
 
-                // 6. Security & Legal Notice
+                // 6. Security Warning Notice
                 Text(
                     text = "WARNING: Unauthorized access to this system is forbidden and will be prosecuted by law.",
                     color = Color.Black,
@@ -197,7 +203,8 @@ fun LoginScreen(
                         withStyle(style = SpanStyle(color = Color(0xFF00BBFF), fontSize = 14.sp, fontWeight = FontWeight.Bold)) {
                             append("admin@brainybairn.edu.gh")
                         }
-                    }
+                    },
+                    modifier = Modifier.padding(bottom = 16.dp)
                 )
             }
         }
