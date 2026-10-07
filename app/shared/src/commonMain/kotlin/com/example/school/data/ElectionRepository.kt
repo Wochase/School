@@ -1,6 +1,6 @@
-package com.example.e_voting.data
+package com.example.school.data
 
-import com.example.e_voting.data.model.PendingCandidate
+import com.example.school.data.model.PendingCandidate
 
 interface ElectionRepository {
     suspend fun login(studentId: String, pass: String): Result<Boolean>

@@ -1,9 +1,9 @@
-package com.example.e_voting.ui.inbox
+package com.example.school.ui.inbox
 
-import com.example.e_voting.data.model.AuditLogEntry
-import com.example.e_voting.data.model.Election
-import com.example.e_voting.data.model.PendingCandidate
-import com.example.e_voting.network.ElectionRepository
+import com.example.school.data.model.AuditLogEntry
+import com.example.school.data.model.Election
+import com.example.school.data.model.PendingCandidate
+import com.example.school.network.ElectionRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

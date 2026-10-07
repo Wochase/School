@@ -1,4 +1,4 @@
-package com.example.e_voting.ui.admin
+package com.example.school.ui.admin
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.e_voting.ui.*
+import com.example.school.ui.*
 
 @Composable
 fun AdminDashboardScreen(
@@ -26,7 +26,7 @@ fun AdminDashboardScreen(
     onOpenHelp: () -> Unit = {},
 ) {
     val adminState by viewModel.adminState.collectAsState()
-    var electionToStartEarly by remember { mutableStateOf<com.example.e_voting.data.model.Election?>(null) }
+    var electionToStartEarly by remember { mutableStateOf<com.example.school.data.model.Election?>(null) }
 
     LaunchedEffect(Unit) {
         viewModel.loadAdminDashboard()

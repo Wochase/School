@@ -8,7 +8,7 @@ plugins {
 }
 
 compose.resources {
-    packageOfResClass = "e_voting.app.shared.generated.resources"
+    packageOfResClass = "school.app.shared.generated.resources"
 }
 
 kotlin {
@@ -35,6 +35,7 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.uiToolingPreview)
+            implementation(libs.androidx.navigation.compose)
 
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)

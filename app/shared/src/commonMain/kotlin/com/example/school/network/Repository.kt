@@ -1,16 +1,16 @@
-package com.example.e_voting.network
+package com.example.school.network
 
-import com.example.e_voting.data.model.AuthResponse
-import com.example.e_voting.data.model.CandidateResult
-import com.example.e_voting.data.model.Election
-import com.example.e_voting.data.model.ElectionResults
-import com.example.e_voting.data.model.LoginRequest
-import com.example.e_voting.data.model.PendingCandidate
-import com.example.e_voting.data.model.Position
-import com.example.e_voting.data.model.PositionResult
-import com.example.e_voting.data.model.VoteResponse
-import com.example.e_voting.data.model.VoteSubmission
-import com.example.e_voting.data.model.VoterEligibility
+import com.example.school.data.model.AuthResponse
+import com.example.school.data.model.CandidateResult
+import com.example.school.data.model.Election
+import com.example.school.data.model.ElectionResults
+import com.example.school.data.model.LoginRequest
+import com.example.school.data.model.PendingCandidate
+import com.example.school.data.model.Position
+import com.example.school.data.model.PositionResult
+import com.example.school.data.model.VoteResponse
+import com.example.school.data.model.VoteSubmission
+import com.example.school.data.model.VoterEligibility
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -26,7 +26,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.Serializable
 import kotlin.time.Clock
-import com.example.e_voting.data.model.AuditLogEntry
+import com.example.school.data.model.AuditLogEntry
 
 @Serializable
 private data class AnonymousVoteTally(

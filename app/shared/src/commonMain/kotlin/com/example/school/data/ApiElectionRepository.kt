@@ -1,6 +1,6 @@
-package com.example.e_voting.data
+package com.example.school.data
 
-import com.example.e_voting.data.model.PendingCandidate
+import com.example.school.data.model.PendingCandidate
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*

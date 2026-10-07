@@ -1,4 +1,4 @@
-package com.example.e_voting.ui.admin
+package com.example.school.ui.admin
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,9 +13,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.e_voting.data.model.AuditLogEntry
-import com.example.e_voting.network.ElectionRepository
-import com.example.e_voting.ui.*
+import com.example.school.data.model.AuditLogEntry
+import com.example.school.network.ElectionRepository
+import com.example.school.ui.*
 
 @Composable
 fun AuditLogsScreen(

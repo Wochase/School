@@ -1,4 +1,4 @@
-package com.example.e_voting.ui
+package com.example.school.ui
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height

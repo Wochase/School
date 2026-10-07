@@ -1,4 +1,4 @@
-package com.example.e_voting.security
+package com.example.school.security
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

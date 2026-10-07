@@ -3,10 +3,10 @@ plugins {
     alias(libs.plugins.ktor)
 }
 
-group = "com.example.e_voting"
+group = "com.example.school"
 version = "1.0.0"
 application {
-    mainClass = "com.example.e_voting.ApplicationKt"
+    mainClass = "com.example.school.ApplicationKt"
 }
 
 dependencies {

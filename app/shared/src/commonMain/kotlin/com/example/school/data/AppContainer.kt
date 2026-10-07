@@ -1,8 +1,8 @@
-package com.example.e_voting.data
+package com.example.school.data
 
-import com.example.e_voting.network.ElectionRepository as NetworkElectionRepository
-import com.example.e_voting.network.KtorApiClient
-import com.example.e_voting.network.MockElectionRepository
+import com.example.school.network.ElectionRepository as NetworkElectionRepository
+import com.example.school.network.KtorApiClient
+import com.example.school.network.MockElectionRepository
 
 object AppContainer {
     // Set true to use the live middleware; false keeps data local to this app session.

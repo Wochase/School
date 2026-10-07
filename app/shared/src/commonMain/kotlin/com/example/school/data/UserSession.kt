@@ -1,6 +1,6 @@
-package com.example.e_voting.data
+package com.example.school.data
 
-import com.example.e_voting.data.model.AuthResponse
+import com.example.school.data.model.AuthResponse
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

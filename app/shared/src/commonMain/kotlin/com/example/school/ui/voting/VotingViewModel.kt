@@ -1,10 +1,10 @@
-package com.example.e_voting.ui.voting
+package com.example.school.ui.voting
 
-import com.example.e_voting.data.model.Election
-import com.example.e_voting.data.model.VoteSubmission
-import com.example.e_voting.data.model.VoterEligibility
-import com.example.e_voting.network.ElectionRepository
-import com.example.e_voting.network.MockElectionRepository
+import com.example.school.data.model.Election
+import com.example.school.data.model.VoteSubmission
+import com.example.school.data.model.VoterEligibility
+import com.example.school.network.ElectionRepository
+import com.example.school.network.MockElectionRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

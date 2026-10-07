@@ -1,4 +1,4 @@
-package com.example.e_voting.data.model
+package com.example.school.data.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

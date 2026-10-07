@@ -1,8 +1,8 @@
-package com.example.e_voting.ui.auth
+package com.example.school.ui.auth
 
-import com.example.e_voting.data.model.AuthResponse
-import com.example.e_voting.data.model.LoginRequest
-import com.example.e_voting.network.ElectionRepository
+import com.example.school.data.model.AuthResponse
+import com.example.school.data.model.LoginRequest
+import com.example.school.network.ElectionRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

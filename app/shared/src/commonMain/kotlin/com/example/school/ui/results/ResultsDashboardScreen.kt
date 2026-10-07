@@ -1,4 +1,4 @@
-package com.example.e_voting.ui.results
+package com.example.school.ui.results
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,11 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.e_voting.data.model.PositionResult
+import com.example.school.data.model.PositionResult
 import kotlinx.coroutines.delay
-import com.example.e_voting.ui.*
-import com.example.e_voting.ui.admin.AdminUiState
-import com.example.e_voting.ui.admin.AdminViewModel
+import com.example.school.ui.*
+import com.example.school.ui.admin.AdminUiState
+import com.example.school.ui.admin.AdminViewModel
 
 @Composable
 fun ResultsDashboardScreen(

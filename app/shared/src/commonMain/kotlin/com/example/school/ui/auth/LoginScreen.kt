@@ -1,4 +1,4 @@
-package com.example.e_voting.ui.auth
+package com.example.school.ui.auth
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,8 +18,10 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import e_voting.app.shared.generated.resources.Res
-import e_voting.app.shared.generated.resources.schoollogo
+import school.app.shared.generated.resources.Res
+import school.app.shared.generated.resources.schoollogo
+import school.app.shared.generated.resources.username
+import school.app.shared.generated.resources.password
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
@@ -102,6 +104,13 @@ fun LoginScreen(
                     onValueChange = { username = it },
                     singleLine = true,
                     shape = RoundedCornerShape(10.dp),
+                    leadingIcon = {
+                        Image(
+                            painter = painterResource(Res.drawable.username),
+                            contentDescription = "Username Icon",
+                            modifier = Modifier.size(22.dp)
+                        )
+                    },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color.Black,
                         unfocusedBorderColor = Color.Black,
@@ -130,6 +139,13 @@ fun LoginScreen(
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
                     shape = RoundedCornerShape(10.dp),
+                    leadingIcon = {
+                        Image(
+                            painter = painterResource(Res.drawable.password),
+                            contentDescription = "Password Icon",
+                            modifier = Modifier.size(22.dp)
+                        )
+                    },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color.Black,
                         unfocusedBorderColor = Color.Black,

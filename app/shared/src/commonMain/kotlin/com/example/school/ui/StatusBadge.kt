@@ -1,4 +1,4 @@
-package com.example.e_voting.ui
+package com.example.school.ui
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.layout.padding

@@ -1,4 +1,4 @@
-package com.example.e_voting.ui.voting
+package com.example.school.ui.voting
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -15,11 +15,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.e_voting.data.model.Candidate
-import com.example.e_voting.data.model.Position
-import com.example.e_voting.ui.*
-import com.example.e_voting.ui.voting.VotingUiState
-import com.example.e_voting.ui.voting.VotingViewModel
+import com.example.school.data.model.Candidate
+import com.example.school.data.model.Position
+import com.example.school.ui.*
+import com.example.school.ui.voting.VotingUiState
+import com.example.school.ui.voting.VotingViewModel
 
 @Composable
 fun BallotScreen(

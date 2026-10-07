@@ -1,3 +1,3 @@
-package com.example.e_voting.data
+package com.example.school.data
 
 // Local database removed.

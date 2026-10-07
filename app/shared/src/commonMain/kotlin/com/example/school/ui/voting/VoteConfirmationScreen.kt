@@ -1,4 +1,4 @@
-package com.example.e_voting.ui.voting
+package com.example.school.ui.voting
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.e_voting.ui.*
+import com.example.school.ui.*
 
 @Composable
 fun VoteConfirmationScreen(

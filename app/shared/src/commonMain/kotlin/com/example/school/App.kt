@@ -9,26 +9,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.e_voting.data.AppContainer
-import com.example.e_voting.ui.*
-import com.example.e_voting.ui.admin.AdminDashboardScreen
-import com.example.e_voting.ui.admin.AdminHelpScreen
-import com.example.e_voting.ui.admin.AdminViewModel
-import com.example.e_voting.ui.admin.AuditLogsScreen
-import com.example.e_voting.ui.admin.CandidateApprovalScreen
-import com.example.e_voting.ui.admin.ElectionControlScreen
-import com.example.e_voting.ui.auth.LoginScreen
-import com.example.e_voting.ui.auth.AuthViewModel
-import com.example.e_voting.ui.election.CreateElectionScreen
-import com.example.e_voting.ui.election.VettingStageSetupScreen
-import com.example.e_voting.ui.inbox.InboxScreen
-import com.example.e_voting.ui.inbox.InboxViewModel
-import com.example.e_voting.ui.results.ResultsDashboardScreen
-import com.example.e_voting.ui.student.CandidateApplicationScreen
-import com.example.e_voting.ui.student.StudentDashboardScreen
-import com.example.e_voting.ui.voting.BallotScreen
-import com.example.e_voting.ui.voting.VotingViewModel
-import com.example.e_voting.ui.voting.VoteConfirmationScreen
+import com.example.school.data.AppContainer
+import com.example.school.ui.*
+import com.example.school.ui.admin.AdminDashboardScreen
+import com.example.school.ui.admin.AdminHelpScreen
+import com.example.school.ui.admin.AdminViewModel
+import com.example.school.ui.admin.AuditLogsScreen
+import com.example.school.ui.admin.CandidateApprovalScreen
+import com.example.school.ui.admin.ElectionControlScreen
+import com.example.school.ui.auth.LoginScreen
+import com.example.school.ui.auth.AuthViewModel
+import com.example.school.ui.election.CreateElectionScreen
+import com.example.school.ui.election.VettingStageSetupScreen
+import com.example.school.ui.inbox.InboxScreen
+import com.example.school.ui.inbox.InboxViewModel
+import com.example.school.ui.results.ResultsDashboardScreen
+import com.example.school.ui.student.CandidateApplicationScreen
+import com.example.school.ui.student.StudentMainRoot
+import com.example.school.ui.voting.BallotScreen
+import com.example.school.ui.voting.VotingViewModel
+import com.example.school.ui.voting.VoteConfirmationScreen
 import kotlinx.coroutines.delay
 
 sealed interface Screen {
@@ -75,7 +75,7 @@ fun App() {
     EVotingTheme {
         Surface {
             Row(Modifier.fillMaxSize()) {
-                if (currentScreen !is Screen.Login) {
+                if (currentScreen !is Screen.Login && isAdmin) {
                     PersistentNavigationPanel(
                         isAdmin = isAdmin,
                         studentId = loggedInStudentId,
@@ -106,14 +106,19 @@ fun App() {
                             )
                         }
                         is Screen.StudentDashboard -> {
-                            StudentDashboardScreen(
+                            StudentMainRoot(
                                 viewModel = adminViewModel,
+                                inboxViewModel = inboxViewModel,
                                 studentId = screen.studentId,
                                 onSelectElectionToVote = { electionId ->
                                     currentScreen = Screen.StudentBallot(screen.studentId, electionId)
                                 },
                                 onViewPublishedResults = { electionId ->
                                     currentScreen = Screen.PublishedResults(electionId)
+                                },
+                                onLogout = {
+                                    authViewModel.logout()
+                                    currentScreen = Screen.Login
                                 }
                             )
                         }
